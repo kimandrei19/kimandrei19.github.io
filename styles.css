@@ -34,8 +34,18 @@ body {
     background: #e0e0e0;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 20px; 
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
+
+.assignment:hover {
+    background-color: #d6d6d6; 
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 .profile-pic {
     width: 150px;
@@ -45,3 +55,4 @@ body {
     margin: 0 auto 10px;
     border: 3px solid #333;
 }
+
