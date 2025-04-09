@@ -1,58 +1,105 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
     background-color: #f4f4f4;
 }
 
 .container {
-    width: 80%;
-    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .header {
     text-align: center;
-    padding: 10px 0;
-    font-size: 24px;
+    padding: 20px 0;
+    font-size: 28px;
     font-weight: bold;
+    color: #333;
 }
 
 .info {
     font-size: 18px;
-    padding: 10px 0;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
 }
 
-.assignments {
-    margin-top: 20px;
+.assignments h2 {
+    margin-bottom: 25px;
+    color: #333;
 }
 
-.assignment {
-    background: #e0e0e0;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 20px; 
+.assignment-card {
+    border-radius: 10px;
+    overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.assignment:hover {
-    background-color: #d6d6d6; 
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.assignment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+}
 
 .profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
     border: 3px solid #333;
+    object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .info {
+        font-size: 16px;
+    }
+}
