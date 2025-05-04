@@ -98,14 +98,6 @@
                 description.className = 'card-text';
                 description.innerText = agent.description;
 
-                const timestamp = document.createElement('p');
-                timestamp.className = 'card-text';
-                timestamp.innerHTML = '<small>Last updated 3 mins ago</small>';
-
-                cardBody.appendChild(title);
-                cardBody.appendChild(description);
-                cardBody.appendChild(timestamp);
-
                 card.appendChild(img);
                 card.appendChild(cardBody);
                 col.appendChild(card);
