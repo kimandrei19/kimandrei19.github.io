@@ -71,43 +71,47 @@
         }
 
         function displayAgents(agents) {
-            const agentCards = document.getElementById('agentCards');
-            agentCards.innerHTML = '';
+    const agentCards = document.getElementById('agentCards');
+    agentCards.innerHTML = '';
 
-            agents.forEach(agent => {
-                const col = document.createElement('div');
-                col.className = 'col-md-4 agent-card';
-                col.setAttribute('data-name', agent.displayName.toLowerCase());
+    agents.forEach(agent => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 agent-card';
+        col.setAttribute('data-name', agent.displayName.toLowerCase());
 
-                const card = document.createElement('div');
-                card.className = 'card text-bg-dark';
+        const card = document.createElement('div');
+        card.className = 'card text-bg-dark';
 
-                const img = document.createElement('img');
-                img.src = agent.displayIcon;
-                img.className = 'card-img-top';
-                img.alt = agent.displayName;
+        const img = document.createElement('img');
+        img.src = agent.displayIcon;
+        img.className = 'card-img-top';
+        img.alt = agent.displayName;
 
-                const cardBody = document.createElement('div');
-                cardBody.className = 'card-body';
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
 
-                const title = document.createElement('h5');
-                title.className = 'card-title';
-                title.innerText = agent.displayName;
+        const title = document.createElement('h5');
+        title.className = 'card-title';
+        title.innerText = agent.displayName;
 
-                const description = document.createElement('p');
-                description.className = 'card-text';
-                description.innerText = agent.description;
+        const description = document.createElement('p');
+        description.className = 'card-text';
+        description.innerText = agent.description;
 
-                card.appendChild(img);
-                card.appendChild(cardBody);
-                col.appendChild(card);
-                agentCards.appendChild(col);
+        cardBody.appendChild(title);
+        cardBody.appendChild(description);
 
-                col.addEventListener('click', () => {
-                    showAgentDetails(agent.uuid);
-                });
-            });
-        }
+        card.appendChild(img);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+        agentCards.appendChild(col);
+
+        col.addEventListener('click', () => {
+            showAgentDetails(agent.uuid);
+        });
+    });
+}
+
 
         function searchAgents() {
             const query = document.getElementById('searchBar').value.toLowerCase();
