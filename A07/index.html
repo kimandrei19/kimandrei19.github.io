@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valorant Agent Browser</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .card-img-top {
+            max-height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-img-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-img-bottom {
+            max-height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-img-bottom:hover {
+            transform: scale(1.1);
+            box-shadow: 2 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .agent-card {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .modal-body img {
+            max-width: 100%;
+        }
+
+        body {
+            background-image: url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: none;
+        }
+
+        .modal-content {
+            color: #000000;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="my-5 text-center">Valorant Agent Browser</h1>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="searchBar" placeholder="Search for an agent..."
+                onkeyup="searchAgents()" />
+        </div>
+
+        <div id="agentCards" class="row"></div>
+    </div>
+
+    <div class="modal fade" id="agentModal" tabindex="-1" aria-labelledby="agentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agentModalLabel">Agent Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="agentModalImage" class="img-fluid mb-3" alt="Agent Image" />
+                    <h5 id="agentModalName"></h5>
+                    <p id="agentModalDescription"></p>
+                    <h6>Abilities:</h6>
+                    <ul id="agentModalAbilities"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        const apiUrl = 'https://valorant-api.com/v1/agents';
+
+        async function fetchAgents() {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+            let agents = data.data.filter(agent => agent.isPlayableCharacter && agent.displayName !== "Sova");
+
+            const viperUUID = "707eab51-4836-f488-046a-cda6bf494859";
+            const viperExists = agents.some(agent => agent.uuid === viperUUID);
+
+            if (!viperExists) {
+                const viper = {
+                    uuid: viperUUID,
+                    displayName: "Viper",
+                    description: "The American Chemist, Viper deploys an array of poisonous chemical devices to control the battlefield and choke the enemy's vision. If the toxins don't kill her prey, her mindgames surely will.",
+                    displayIcon: "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png",
+                    fullPortrait: "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/fullportrait.png"
+                };
+                agents.push(viper);
+            }
+
+            displayAgents(agents);
+        }
+
+        function displayAgents(agents) {
+            const agentCards = document.getElementById('agentCards');
+            agentCards.innerHTML = '';
+
+            agents.forEach(agent => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4 agent-card';
+                col.setAttribute('data-name', agent.displayName.toLowerCase());
+
+                const card = document.createElement('div');
+                card.className = 'card text-bg-dark';
+
+                const img = document.createElement('img');
+                img.src = agent.displayIcon;
+                img.className = 'card-img-top';
+                img.alt = agent.displayName;
+
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+
+                const title = document.createElement('h5');
+                title.className = 'card-title';
+                title.innerText = agent.displayName;
+
+                const description = document.createElement('p');
+                description.className = 'card-text';
+                description.innerText = agent.description;
+
+                const timestamp = document.createElement('p');
+                timestamp.className = 'card-text';
+                timestamp.innerHTML = '<small>Last updated 3 mins ago</small>';
+
+                cardBody.appendChild(title);
+                cardBody.appendChild(description);
+                cardBody.appendChild(timestamp);
+
+                card.appendChild(img);
+                card.appendChild(cardBody);
+                col.appendChild(card);
+                agentCards.appendChild(col);
+
+                col.addEventListener('click', () => {
+                    showAgentDetails(agent.uuid);
+                });
+            });
+        }
+
+        function searchAgents() {
+            const query = document.getElementById('searchBar').value.toLowerCase();
+            const agentCards = document.querySelectorAll('.agent-card');
+
+            agentCards.forEach(card => {
+                const agentName = card.getAttribute('data-name');
+                card.style.display = agentName.includes(query) ? 'block' : 'none';
+            });
+        }
+
+        async function showAgentDetails(uuid) {
+            const response = await fetch(`https://valorant-api.com/v1/agents/${uuid}`);
+            const data = await response.json();
+            const agent = data.data;
+
+            document.getElementById('agentModalName').innerText = agent.displayName;
+            document.getElementById('agentModalDescription').innerText = agent.description;
+            document.getElementById('agentModalImage').src = agent.fullPortrait;
+
+            const abilitiesList = document.getElementById('agentModalAbilities');
+            abilitiesList.innerHTML = '';
+            agent.abilities.forEach(ability => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${ability.displayName}</strong>: ${ability.description}`;
+                abilitiesList.appendChild(listItem);
+            });
+
+            const modal = new bootstrap.Modal(document.getElementById('agentModal'));
+            modal.show();
+        }
+
+        fetchAgents();
+    </script>
+</body>
+
+</html>
