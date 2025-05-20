@@ -85,10 +85,17 @@
 
 <body id="body">
 
-  <div class="container-fluid p-5 mb-3 header-bg d-flex justify-content-between align-items-center">
-    <div class="h1 text-center flex-grow-1">Discover Palawan</div>
-    <button id="colorBtn" onclick="changeMode()" class="ms-4 px-3 py-2 btn btn-dark">Dark Mode</button>
+  <div class="container-fluid p-4 mb-3 header-bg">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-8 text-center text-md-start">
+        <h1 class="mb-3 mb-md-0">Discover Palawan</h1>
+      </div>
+      <div class="col-12 col-md-4 text-center text-md-end">
+        <button id="colorBtn" onclick="changeMode()" class="btn btn-dark">Dark Mode</button>
+      </div>
+    </div>
   </div>
+  
 
   <div class="container">
     <div class="row" id="container-row"></div>
