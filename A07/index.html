@@ -12,11 +12,13 @@
 <body>
   <div class="overlay"></div>
   <div class="container">
-    <a href="javascript:history.back()" class="btn btn-outline-light mt-3">Back</a>
+    <a href="../index.html" class="btn btn-outline-light mt-3">Back</a>
+
     <h1 class="my-5 text-center">Valorant Agent Browser</h1>
 
     <div class="mb-3">
-      <input type="text" class="form-control" id="searchBar" placeholder="Search for an agent..." onkeyup="searchAgents()" />
+      <input type="text" class="form-control" id="searchBar" placeholder="Search for an agent..."
+        onkeyup="searchAgents()" />
     </div>
 
     <div id="agentCards" class="row"></div>
@@ -106,10 +108,12 @@
         col.appendChild(card);
         agentCards.appendChild(col);
 
-        
+
         col.addEventListener('click', () => {
+          sessionStorage.setItem('fromAgentList', 'true');
           window.location.href = `view.html?id=${agent.uuid}`;
         });
+
       });
     }
 
