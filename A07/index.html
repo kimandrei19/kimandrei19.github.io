@@ -16,7 +16,8 @@
     <h1 class="my-5 text-center">Valorant Agent Browser</h1>
 
     <div class="mb-3">
-      <input type="text" class="form-control" id="searchBar" placeholder="Search for an agent..." onkeyup="searchAgents()" />
+      <input type="text" class="form-control" id="searchBar" placeholder="Search for an agent..."
+        onkeyup="searchAgents()" />
     </div>
 
     <div id="agentCards" class="row"></div>
@@ -106,7 +107,7 @@
         col.appendChild(card);
         agentCards.appendChild(col);
 
-        
+
         col.addEventListener('click', () => {
           window.location.href = `view.html?id=${agent.uuid}`;
         });
