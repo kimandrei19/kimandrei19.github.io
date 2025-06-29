@@ -30,18 +30,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#hero">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                         <li class="nav-item ms-lg-3">
                             <button id="theme-toggle" class="btn theme-toggle-btn" aria-label="Toggle theme">
                                 <i class="fas fa-sun"></i>
@@ -59,11 +51,10 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7 text-center text-lg-start" data-aos="fade-right">
                         <h1>Kim Andrei Dela Cueva</h1>
-                        <h2 class="mb-4">Web Developer & IT Student</h2>
+                        <h2 class="mb-4" id="typewriter-title"></h2>
                         <p class="lead mb-4">Creating digital experiences through code and design.</p>
                         <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
-                        <a href="resume.pdf" class="btn btn-outline-secondary btn-lg ms-2" target="_blank">Download
-                            CV</a>
+                        <a href="resume.pdf" class="btn btn-outline-secondary btn-lg ms-2" target="_blank">Download CV</a>
                     </div>
                     <div class="col-lg-5 mt-4 mt-lg-0 text-center" data-aos="fade-left" data-aos-delay="200">
                         <img src="images/kim.jpeg" alt="Kim Dela Cueva" class="profile-image">
@@ -78,28 +69,18 @@
                 <div class="row gy-4 align-items-stretch">
                     <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
                         <div class="about-text">
-                            <p>I'm a second-year Information Technology student at Polytechnic University of the
-                                Philippines, specializing in web development.</p>
-                            <p>Passionate about building responsive, user-friendly websites and applications using
-                                modern
-                                technologies.</p>
+                            <p>I'm a second-year Information Technology student at Polytechnic University of the Philippines, specializing in web development.</p>
+                            <p>Passionate about building responsive, user-friendly websites and applications using modern technologies.</p>
                             <div class="personal-info">
-                                <p><i class="fas fa-map-marker-alt me-2"></i><strong>Location:</strong> San Pablo, Sto
-                                    Tomas, Batangas</p>
-                                <p><i class="fas fa-graduation-cap me-2"></i><strong>Education:</strong> Diploma in
-                                    Information Technology</p>
-                                <p><i class="fas fa-bullseye me-2"></i><strong>Focus:</strong> Front-end/Back-end
-                                    Development, UI/UX Design</p>
+                                <p><i class="fas fa-map-marker-alt me-2"></i><strong>Location:</strong> San Pablo, Sto Tomas, Batangas</p>
+                                <p><i class="fas fa-graduation-cap me-2"></i><strong>Education:</strong> Diploma in Information Technology</p>
+                                <p><i class="fas fa-bullseye me-2"></i><strong>Focus:</strong> Front-end/Back-end Development, UI/UX Design</p>
                             </div>
                             <div class="social-links mt-4">
-                                <a href="https://www.facebook.com/kim.andrei19" target="_blank" aria-label="Facebook"><i
-                                        class="fab fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/delacuevakim/" target="_blank"
-                                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://github.com/kimandrei19" target="_blank" aria-label="Github"><i
-                                        class="fab fa-github"></i></a>
-                                <a href="https://open.spotify.com/user/21f65pbndzsc6hpznzduh24ky" target="_blank"
-                                    aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                                <a href="https://www.facebook.com/kim.andrei19" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/delacuevakim/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://github.com/kimandrei19" target="_blank" aria-label="Github"><i class="fab fa-github"></i></a>
+                                <a href="https://open.spotify.com/user/21f65pbndzsc6hpznzduh24ky" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
                             </div>
                         </div>
                     </div>
@@ -107,12 +88,7 @@
                         <div class="skills-hobbies-box">
                             <h3>Skills & Technologies</h3>
                             <div class="skill-tags">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Bootstrap</span>
-                                <span>Responsive Design</span>
-                                <span>UI/UX Principles</span>
+                                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>Responsive Design</span><span>UI/UX Principles</span>
                             </div>
                             <h3 class="mt-4">Hobbies & Interests</h3>
                             <ul class="hobbies-list">
@@ -136,8 +112,12 @@
                             <img src="images/macm4.jpeg" alt="MacBook M4 Pro" class="project-image">
                             <div class="project-info">
                                 <h3>MacBook M4 Pro</h3>
-                                <p>Product showcase page highlighting specifications and features.</p>
-                                <a href="A04/index.html" class="btn btn-outline">View Project</a>
+                                <p>A clean product showcase page using a bento grid layout.</p>
+                                <div class="project-tags"><span>HTML</span><span>CSS</span><span>Bootstrap</span></div>
+                                <div class="project-links">
+                                    <a href="A04/index.html" class="btn btn-outline">View Live</a>
+                                    <button class="btn btn-details" data-bs-toggle="modal" data-bs-target="#projectModal1">Details</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -146,8 +126,12 @@
                             <img src="images/boracayisland.jpg" alt="Boracay Tourism" class="project-image">
                             <div class="project-info">
                                 <h3>Boracay Island</h3>
-                                <p>Tourism website showcasing Boracay's beautiful beaches and attractions.</p>
-                                <a href="A05/index.html" class="btn btn-outline">View Project</a>
+                                <p>An immersive tourism page with a full-screen video hero.</p>
+                                <div class="project-tags"><span>HTML</span><span>CSS</span><span>Video BG</span></div>
+                                <div class="project-links">
+                                    <a href="A05/index.html" class="btn btn-outline">View Live</a>
+                                    <button class="btn btn-details" data-bs-toggle="modal" data-bs-target="#projectModal2">Details</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -156,8 +140,12 @@
                             <img src="images/palawan.jpg" alt="Palawan Tourism" class="project-image">
                             <div class="project-info">
                                 <h3>Palawan, Philippines</h3>
-                                <p>Interactive travel guide featuring destinations around Palawan.</p>
-                                <a href="A06/index.html" class="btn btn-outline">View Project</a>
+                                <p>A modern travel guide gallery with a functional contact form.</p>
+                                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                                <div class="project-links">
+                                    <a href="A06/index.html" class="btn btn-outline">View Live</a>
+                                    <button class="btn btn-details" data-bs-toggle="modal" data-bs-target="#projectModal3">Details</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -165,9 +153,13 @@
                         <div class="project-card">
                             <img src="images/valorant.jpeg" alt="Valorant Characters API" class="project-image">
                             <div class="project-info">
-                                <h3>Valorant Characters API</h3>
-                                <p>Interactive display of Valorant agents using the Valorant API.</p>
-                                <a href="A07/index.html" class="btn btn-outline">View Project</a>
+                                <h3>Valorant API Browser</h3>
+                                <p>A themed agent browser fetching data from a live API.</p>
+                                <div class="project-tags"><span>API</span><span>JS</span><span>Bootstrap</span></div>
+                                <div class="project-links">
+                                    <a href="A07/index.html" class="btn btn-outline">View Live</a>
+                                    <button class="btn btn-details" data-bs-toggle="modal" data-bs-target="#projectModal4">Details</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -176,8 +168,12 @@
                             <img src="images/onepiece.jpg" alt="One Piece Project" class="project-image">
                             <div class="project-info">
                                 <h3>One Piece Parallax</h3>
-                                <p>Immersive One Piece Parallax Activity with stunning layered visuals.</p>
-                                <a href="A08/index.html" class="btn btn-outline">View Project</a>
+                                <p>An immersive parallax scrolling effect with multiple layers.</p>
+                                <div class="project-tags"><span>jQuery</span><span>JS</span><span>Parallax</span></div>
+                                <div class="project-links">
+                                    <a href="A08/index.html" class="btn btn-outline">View Live</a>
+                                    <button class="btn btn-details" data-bs-toggle="modal" data-bs-target="#projectModal5">Details</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -186,73 +182,117 @@
         </section>
 
         <section id="contact" class="contact-section">
-            <div class="container text-center" data-aos="fade-up">
+            <div class="container" data-aos="fade-up">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="lead">Seeking guidance or assistance with a project? Don’t hesitate to reach out!</p>
-                <a href="mailto:delacuevakimandrei@gmail.com" class="btn btn-primary btn-lg mt-3">Email Me</a>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <p class="lead text-center mb-4">Have a project in mind or just want to say hi? Feel free to reach out!</p>
+                        <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" id="contact-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+                            <div id="form-status" class="text-center mt-3"></div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <a href="#" class="back-to-top-btn" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
+    <a href="#" class="back-to-top-btn" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
     <footer class="footer">
         <div class="container">
             <p>© 2024 Kim Andrei Dela Cueva. All rights reserved.</p>
         </div>
     </footer>
 
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">MacBook M4 Pro</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="images/macm4.jpeg" class="img-fluid mb-4" alt="MacBook M4 Pro"><h6>About This Project</h6><p>This is a conceptual product landing page for the fictional MacBook M4 Pro. The goal was to create a clean, modern, and visually appealing layout similar to Apple's design language, using a bento grid to showcase key specifications.</p><h6>Technologies Used</h6><div class="project-tags"><span>HTML</span><span>CSS</span><span>Bootstrap 5</span><span>AOS Library</span></div></div><div class="modal-footer"><a href="A04/index.html" class="btn btn-primary">View Live</a><a href="https://github.com/kimandrei19/kimandrei19.github.io/tree/main/A04" class="btn btn-secondary" target="_blank">View Code</a></div></div></div></div>
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Boracay Island</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="images/boracayisland.jpg" class="img-fluid mb-4" alt="Boracay"><h6>About This Project</h6><p>An immersive tourism page designed to capture the beauty of Boracay. It features a full-screen video hero background to immediately engage the user and a modern dark theme to make the vibrant colors of the island pop.</p><h6>Technologies Used</h6><div class="project-tags"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>Video Background</span></div></div><div class="modal-footer"><a href="A05/index.html" class="btn btn-primary">View Live</a><a href="https://github.com/kimandrei19/kimandrei19.github.io/tree/main/A05" class="btn btn-secondary" target="_blank">View Code</a></div></div></div></div>
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Palawan, Philippines</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="images/palawan.jpg" class="img-fluid mb-4" alt="Palawan"><h6>About This Project</h6><p>A travel guide gallery for Palawan, The Philippines' Last Frontier. The page uses a clean card layout to showcase top destinations and includes a unified contact and inquiry section for a practical user experience.</p><h6>Technologies Used</h6><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>AOS Library</span></div></div><div class="modal-footer"><a href="A06/index.html" class="btn btn-primary">View Live</a><a href="https://github.com/kimandrei19/kimandrei19.github.io/tree/main/A06" class="btn btn-secondary" target="_blank">View Code</a></div></div></div></div>
+    <div class="modal fade" id="projectModal4" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Valorant API Browser</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="images/valorant.jpeg" class="img-fluid mb-4" alt="Valorant"><h6>About This Project</h6><p>A dynamic agent browser that fetches live data from the public Valorant API. It features a thematic design based on the game's UI, including role-based filtering, search functionality, and themed agent detail pages.</p><h6>Technologies Used</h6><div class="project-tags"><span>REST API</span><span>JavaScript (Async/Await)</span><span>Bootstrap 5</span><span>Thematic UI</span></div></div><div class="modal-footer"><a href="A07/index.html" class="btn btn-primary">View Live</a><a href="https://github.com/kimandrei19/kimandrei19.github.io/tree/main/A07" class="btn btn-secondary" target="_blank">View Code</a></div></div></div></div>
+    <div class="modal fade" id="projectModal5" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">One Piece Parallax</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="images/onepiece.jpg" class="img-fluid mb-4" alt="One Piece"><h6>About This Project</h6><p>A cinematic, multi-layered parallax scrolling effect created using jQuery. The project aims to create an immersive visual experience that tells a story as the user scrolls, inspired by the grand adventure of One Piece.</p><h6>Technologies Used</h6><div class="project-tags"><span>jQuery</span><span>JavaScript</span><span>Parallax Effect</span><span>CSS</span></div></div><div class="modal-footer"><a href="A08/index.html" class="btn btn-primary">View Live</a><a href="https://github.com/kimandrei19/kimandrei19.github.io/tree/main/A08" class="btn btn-secondary" target="_blank">View Code</a></div></div></div></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-        });
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true });
 
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const themeIcon = themeToggle.querySelector('i');
-        const THEME_KEY = 'user-theme';
-        const preloader = document.querySelector('.preloader');
-        const backToTopBtn = document.querySelector('.back-to-top-btn');
+            const preloader = document.querySelector('.preloader');
+            window.addEventListener('load', () => {
+                preloader.style.display = 'none';
+            });
 
-        window.addEventListener('load', () => {
-            preloader.style.display = 'none';
-        });
+            new TypeIt("#typewriter-title", {
+                strings: ["Web Developer", "IT Student", "UI/UX Enthusiast"],
+                speed: 100, breakLines: false, autoStart: true, loop: true,
+            }).go();
 
-        const applyTheme = (theme) => {
-            if (theme === 'light') {
-                body.classList.add('light-mode');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            } else {
-                body.classList.remove('light-mode');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const themeIcon = themeToggle.querySelector('i');
+            const THEME_KEY = 'user-theme';
+
+            const applyTheme = (theme) => {
+                if (theme === 'light') {
+                    body.classList.add('light-mode');
+                    themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon');
+                } else {
+                    body.classList.remove('light-mode');
+                    themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun');
+                }
+            };
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            applyTheme(savedTheme || 'dark');
+            themeToggle.addEventListener('click', () => {
+                let newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+                applyTheme(newTheme);
+                localStorage.setItem(THEME_KEY, newTheme);
+            });
+
+            const backToTopBtn = document.querySelector('.back-to-top-btn');
+            window.addEventListener('scroll', () => {
+                backToTopBtn.classList.toggle('show', window.scrollY > 300);
+            });
+
+            const form = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+            async function handleSubmit(event) {
+                event.preventDefault();
+                const data = new FormData(event.target);
+                try {
+                    const response = await fetch(event.target.action, {
+                        method: form.method, body: data, headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        formStatus.innerHTML = "Thanks for your submission!";
+                        form.reset();
+                    } else {
+                        const data = await response.json();
+                        if (Object.hasOwn(data, 'errors')) {
+                            formStatus.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            formStatus.innerHTML = "Oops! There was a problem submitting your form";
+                        }
+                    }
+                } catch (error) {
+                    formStatus.innerHTML = "Oops! There was a problem submitting your form";
+                }
             }
-        };
-
-        const savedTheme = localStorage.getItem(THEME_KEY);
-        applyTheme(savedTheme || 'dark');
-
-        themeToggle.addEventListener('click', () => {
-            let newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
-            applyTheme(newTheme);
-            localStorage.setItem(THEME_KEY, newTheme);
+            form.addEventListener("submit", handleSubmit)
         });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
     </script>
 </body>
-
 </html>

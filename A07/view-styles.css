@@ -1,0 +1,212 @@
+:root {
+    --valorant-red: #fd4556;
+    --valorant-dark: #0f1923;
+    --valorant-light: #ece8e1;
+    --valorant-secondary: #7e878f;
+    --role-duelist: #ff4655;
+    --role-controller: #4a80ff;
+    --role-initiator: #b583ff;
+    --role-sentinel: #7cfc00;
+}
+
+body {
+    background-color: var(--valorant-dark);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--valorant-light);
+    font-family: 'Teko', sans-serif;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 25, 35, 0.88);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(10px);
+    color: var(--valorant-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 1001;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.back-btn:hover {
+    color: var(--valorant-red);
+}
+
+.agent-dossier {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    min-height: 100vh;
+    gap: 2rem;
+    align-items: center;
+}
+
+.agent-portrait-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#agentPortrait {
+    max-height: 90vh;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px var(--agent-color, #fff));
+}
+
+.agent-info-container {
+    padding: 4rem 2rem;
+}
+
+#agentRole {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--agent-color, var(--valorant-light));
+    margin-bottom: 0.5rem;
+}
+
+#agentRole img {
+    height: 30px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+#agentName {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#agentDescription {
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--valorant-secondary);
+    max-width: 600px;
+    margin-top: 1rem;
+}
+
+.abilities-title {
+    margin-top: 3rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    border-left: 4px solid var(--agent-color, var(--valorant-red));
+    padding-left: 1rem;
+}
+
+#agentAbilities {
+    margin-top: 1rem;
+}
+
+.ability-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #222;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.ability-card:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: var(--agent-color, var(--valorant-red));
+}
+
+.ability-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.ability-details h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.ability-details p {
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--valorant-secondary);
+    margin-bottom: 0;
+}
+
+
+.role-duelist {
+    --agent-color: var(--role-duelist);
+}
+
+.role-controller {
+    --agent-color: var(--role-controller);
+}
+
+.role-initiator {
+    --agent-color: var(--role-initiator);
+}
+
+.role-sentinel {
+    --agent-color: var(--role-sentinel);
+}
+
+@media (max-width: 992px) {
+    .agent-dossier {
+        grid-template-columns: 1fr;
+    }
+
+    .agent-portrait-container {
+        height: 60vh;
+        order: -1;
+    }
+
+    #agentPortrait {
+        max-height: 55vh;
+    }
+
+    .agent-info-container {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    #agentRole {
+        justify-content: center;
+    }
+
+    #agentDescription {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .abilities-title {
+        text-align: left;
+    }
+}

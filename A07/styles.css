@@ -1,59 +1,211 @@
-.card-img-top {
-    max-height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-img-top:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.card-img-bottom {
-    max-height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-img-bottom:hover {
-    transform: scale(1.1);
-    box-shadow: 2 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.agent-card {
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.modal-body img {
-    max-width: 100%;
+:root {
+    --valorant-red: #fd4556;
+    --valorant-dark: #0f1923;
+    --valorant-light: #ece8e1;
+    --valorant-secondary: #7e878f;
+    --role-duelist: #ff4655;
+    --role-controller: #4a80ff;
+    --role-initiator: #b583ff;
+    --role-sentinel: #7cfc00;
 }
 
 body {
-    background-image: url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png');
+    background-color: var(--valorant-dark);
+    background-image: url('https://images.alphacoders.com/133/1334515.png');
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    color: #ffffff;
+    color: var(--valorant-light);
+    font-family: 'Teko', sans-serif;
+    min-height: 100vh;
 }
 
-.overlay {
+body::before {
+    content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(15, 25, 35, 0.85);
     z-index: -1;
 }
 
-.card {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: none;
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(10px);
+    color: var(--valorant-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 1000;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 
-.modal-content {
-    color: #000000;
-    background-color: #ffffff;
+.back-btn:hover {
+    color: var(--valorant-red);
+}
+
+.valorant-header h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--valorant-red);
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--valorant-red);
+}
+
+.valorant-header p {
+    font-size: 1.5rem;
+    color: var(--valorant-secondary);
+    letter-spacing: 2px;
+}
+
+.controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-filter {
+    color: var(--valorant-secondary);
+    background-color: transparent;
+    border: 1px solid var(--valorant-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+    color: var(--valorant-light);
+    border-color: var(--valorant-light);
+}
+
+.btn-filter.active {
+    color: var(--valorant-dark);
+    background-color: var(--valorant-red);
+    border-color: var(--valorant-red);
+    box-shadow: 0 0 15px var(--valorant-red);
+}
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.search-wrapper .fa-search {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--valorant-secondary);
+}
+
+#searchBar {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--valorant-secondary);
+    color: var(--valorant-light);
+    padding-left: 40px;
+    height: 45px;
+}
+
+#searchBar:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: var(--valorant-red);
+    box-shadow: none;
+    color: #fff;
+}
+
+#loadingIndicator,
+#noResultsMessage {
+    color: var(--valorant-light);
+}
+
+#loadingIndicator .spinner-border {
+    color: var(--valorant-red);
+}
+
+.agent-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    height: 380px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agent-card:hover {
+    transform: scale(1.05);
+}
+
+.agent-card.role-duelist {
+    --agent-color: var(--role-duelist);
+}
+
+.agent-card.role-controller {
+    --agent-color: var(--role-controller);
+}
+
+.agent-card.role-initiator {
+    --agent-color: var(--role-initiator);
+}
+
+.agent-card.role-sentinel {
+    --agent-color: var(--role-sentinel);
+}
+
+.agent-card:hover {
+    box-shadow: 0 0 25px var(--agent-color);
+    border-color: var(--agent-color);
+}
+
+.agent-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1.1);
+    height: 115%;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.agent-card:hover .agent-image {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+}
+
+.agent-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(15, 25, 35, 1) 20%, transparent);
+    text-align: center;
+}
+
+.agent-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--valorant-light);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.agent-role {
+    font-size: 1.2rem;
+    color: var(--agent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }

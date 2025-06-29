@@ -4,99 +4,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Boracay, Philippines</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Discover Boracay Island, Philippines</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-    <div class="header text-center">
-        <h1 class="display-4">Boracay Island</h1>
-        <p class="lead">Paradise in the Philippines</p>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/whitebeach.jpg" class="card-img-top" alt="White Beach">
-                    <div class="card-body">
-                        <h5 class="card-title">White Beach</h5>
-                        <p class="card-text">Boracay's most famous beach with powdery white sand and crystal clear
-                            waters stretching 4 kilometers.</p>
+    <header class="page-header">
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <button id="theme-toggle" class="btn theme-toggle-btn" aria-label="Toggle theme">
+            <i class="fas fa-sun"></i>
+        </button>
+    </header>
+
+    <section class="video-hero">
+        <video autoplay muted loop id="heroVideo">
+            <source src="images/boracay-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <div class="hero-content text-center">
+                <h1 class="display-2" data-aos="fade-down">Boracay Island</h1>
+                <p class="lead" data-aos="fade-up" data-aos-delay="200">Discover Paradise in the Philippines</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <section class="intro-section text-center" data-aos="fade-up">
+            <h2>The Gem of the Visayas</h2>
+            <p class="lead text-secondary">Famous for its powdery white sand beaches, crystal-clear turquoise waters,
+                and vibrant nightlife, Boracay is a world-renowned tropical paradise that promises an unforgettable
+                escape.</p>
+        </section>
+
+        <section id="attractions" class="my-5">
+            <h2 class="text-center section-title" data-aos="fade-up">Must-See Spots</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+                    <div class="attraction-card"><img src="images/whitebeach.jpg" class="card-img-top"
+                            alt="White Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">White Beach</h5>
+                            <p class="card-text">The island's 4-kilometer main beach, known for its stunning beauty and
+                                vibrant atmosphere.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="attraction-card"><img src="images/pukashell.jpg" class="card-img-top"
+                            alt="Puka Shell Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Puka Shell Beach</h5>
+                            <p class="card-text">A quieter northern beach famous for its namesake puka shells and serene
+                                ambiance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="attraction-card"><img src="images/mountluho.jpg" class="card-img-top" alt="Mount Luho">
+                        <div class="card-body">
+                            <h5 class="card-title">Mount Luho</h5>
+                            <p class="card-text">Hike to the highest point on the island for breathtaking 360-degree
+                                panoramic views.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+                    <div class="attraction-card"><img src="images/bulabogbeach.jpg" class="card-img-top"
+                            alt="Bulabog Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Bulabog Beach</h5>
+                            <p class="card-text">Asia's premier destination for kiteboarding and windsurfing, with
+                                strong, consistent winds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="attraction-card"><img src="images/crystalcove.jpg" class="card-img-top"
+                            alt="Crystal Cove Island">
+                        <div class="card-body">
+                            <h5 class="card-title">Crystal Cove Island</h5>
+                            <p class="card-text">A nearby private island perfect for cove exploration, trekking, and
+                                snorkeling adventures.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="attraction-card"><img src="images/diniwidbeach.jpg" class="card-img-top"
+                            alt="Diniwid Beach">
+                        <div class="card-body">
+                            <h5 class="card-title">Diniwid Beach</h5>
+                            <p class="card-text">A charming and secluded cove just a short walk from the bustling White
+                                Beach.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/pukashell.jpg" class="card-img-top" alt="Puka Shell Beach">
-                    <div class="card-body">
-                        <h5 class="card-title">Puka Shell Beach</h5>
-                        <p class="card-text">A quieter alternative to White Beach, known for its puka shells and
-                            stunning sunsets.</p>
+        </section>
+
+        <section id="activities" class="my-5">
+            <h2 class="text-center section-title" data-aos="fade-up">Things to Do</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4" data-aos="fade-right">
+                    <div class="activity-item"><i class="fas fa-swimmer fa-3x mb-3"></i>
+                        <h4>Island Hopping</h4>
+                        <p>Explore nearby islands, snorkel in clear waters, and enjoy a fresh seafood lunch.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/mountluho.jpg" class="card-img-top" alt="Mount Luho">
-                    <div class="card-body">
-                        <h5 class="card-title">Mount Luho</h5>
-                        <p class="card-text">The highest point in Boracay offering panoramic views of the entire island.
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="activity-item"><i class="fas fa-umbrella-beach fa-3x mb-3"></i>
+                        <h4>Sunset Watching</h4>
+                        <p>Witness one of the world's most beautiful sunsets from a paraw sailboat or a beachside bar.
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/bulabogbeach.jpg" class="card-img-top" alt="Bulabog Beach">
-                    <div class="card-body">
-                        <h5 class="card-title">Bulabog Beach</h5>
-                        <p class="card-text">The island's water sports capital, perfect for kiteboarding and
-                            windsurfing.</p>
+                <div class="col-md-4" data-aos="fade-left">
+                    <div class="activity-item"><i class="fas fa-utensils fa-3x mb-3"></i>
+                        <h4>Food Tripping</h4>
+                        <p>Savor everything from fresh seafood grills on the beach to international fine dining
+                            cuisines.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/crystalcove.jpg" class="card-img-top" alt="Crystal Cove Island">
-                    <div class="card-body">
-                        <h5 class="card-title">Crystal Cove Island</h5>
-                        <p class="card-text">A small private island with stunning coves, caves, and excellent snorkeling
-                            spots.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/diniwidbeach.jpg" class="card-img-top" alt="Diniwid Beach">
-                    <div class="card-body">
-                        <h5 class="card-title">Diniwid Beach</h5>
-                        <p class="card-text">A secluded beach just north of White Beach with calm waters and great
-                            snorkeling.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
-    <footer class="text-center">
-        <p>© 2023 Boracay Island Tourism. All rights reserved.</p>
-        <p>Experience the beauty of the Philippines!</p>
+        </section>
+    </main>
+
+    <footer class="text-center py-4">
+        <p>A conceptual page by Kim Andrei Dela Cueva.</p>
     </footer>
 
-    <div class="position-fixed bottom-0 start-0 m-3">
-        <button onclick="history.back()" class="btn btn-primary rounded-circle p-2 shadow-sm border-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-arrow-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-            </svg>
-        </button>
-    </div>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+        const THEME_KEY = 'user-theme';
+        const applyTheme = (theme) => {
+            if (theme === 'light') { body.classList.add('light-mode'); themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
+            else { body.classList.remove('light-mode'); themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
+        };
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        applyTheme(savedTheme || 'dark');
+        themeToggle.addEventListener('click', () => {
+            let newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+            applyTheme(newTheme);
+            localStorage.setItem(THEME_KEY, newTheme);
+        });
+    </script>
 </body>
 
 </html>

@@ -1,229 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery - Palawan</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <style>
-    .card:hover {
-      transform: scale(1.05);
-      transition: 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .expandable-content {
-      display: none;
-      margin-top: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .info-section {
-      background-color: #f8f9fa;
-      padding: 30px;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-
-    .info-section h3 {
-      margin-bottom: 15px;
-    }
-
-    .header-bg {
-      background: linear-gradient(to right, #00bfa6, #00cfff);
-      color: white;
-    }
-
-    .footer {
-      background-color: #f8f9fa;
-      padding: 20px;
-      margin-top: 50px;
-      display: none;
-    }
-
-    .footer button {
-      margin-top: 20px;
-    }
-
-    .card-img-top {
-      object-fit: cover;
-      height: 200px;
-      width: 100%;
-    }
-
-    [data-bs-theme="dark"] .info-section {
-      background-color: #2c2c2c;
-      color: #f8f9fa;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    [data-bs-theme="dark"] .footer {
-      background-color: #2c2c2c;
-      color: #f8f9fa;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    [data-bs-theme="dark"] .form-control {
-      background-color: #3a3a3a;
-      color: #ffffff;
-      border-color: #555;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    [data-bs-theme="dark"] .form-control::placeholder {
-      color: #bbb;
-    }
-
-    [data-bs-theme="dark"] .form-label {
-      color: #f8f9fa;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Palawan: The Last Frontier</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body id="body">
+<body>
 
-  <div class="container-fluid p-4 mb-3 header-bg">
-    <div class="row align-items-center">
-      <div class="col-12 col-md-8 text-center text-md-start">
-        <h1 class="mb-3 mb-md-0">Discover Palawan</h1>
-      </div>
-      <div class="col-12 col-md-4 text-center text-md-end">
-        <button id="colorBtn" onclick="changeMode()" class="btn btn-dark">Dark Mode</button>
-      </div>
+  <header class="page-header">
+    <a href="javascript:history.back()" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <button id="theme-toggle" class="btn theme-toggle-btn" aria-label="Toggle theme">
+      <i class="fas fa-sun"></i>
+    </button>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-content text-center">
+      <h1 class="display-3" data-aos="fade-down">Palawan</h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200">The Philippines' Last Ecological Frontier</p>
     </div>
-  </div>
+  </section>
 
-
-  <div class="container">
-    <div class="row" id="container-row"></div>
-
-    <div class="info-section">
-      <h3>About Palawan</h3>
-      <p>Palawan is an archipelago of islands in the Philippines, known for its crystal-clear waters, stunning beaches,
-        and unique biodiversity. It is home to some of the world's most beautiful places such as El Nido, Coron, and
-        Puerto Princesa.</p>
-    </div>
-
-    <div class="info-section">
-      <h3>Inquire About Palawan</h3>
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="3" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
-      </form>
-    </div>
-
-    <div class="info-section">
-      <h3>Contact Us</h3>
-      <p>If you have any questions, feel free to reach out to us!</p>
-      <ul>
-        <li>Email: palawanph.com</li>
-        <li>Phone: +63 976 337 2050</li>
-        <li>Address: Puerto Princesa City, Palawan, Philippines</li>
-      </ul>
-    </div>
-
-    <button class="btn btn-secondary" onclick="toggleFooter()">Show Footer</button>
-    <button type="button" class="btn btn-outline-dark" onclick="history.back()">Back</button>
-  </div>
-
-  <div class="footer" id="footer">
-    <p>&copy; 2025 Discover Palawan. All rights reserved.</p>
-  </div>
-
-  <script>
-    var titles = [
-      "El Nido, Palawan",
-      "Coron, Palawan",
-      "Puerto Princesa, Palawan"
-    ];
-
-    var pictures = [
-      "images/elnido.jpg",
-      "images/coron.jpg",
-      "images/puertoprincesa.jpg"
-    ];
-
-    var contents = [
-      "Explore stunning limestone cliffs, hidden lagoons, and crystal-clear waters. El Nido is paradise for island hopping and snorkeling.",
-      "Coron is famous for its world-class wreck diving sites, pristine lakes like Kayangan Lake, and breathtaking landscapes.",
-      "Home to the world-renowned Puerto Princesa Underground River, this city blends adventure and nature like no other."
-    ];
-
-    var rowElement = document.getElementById("container-row");
-
-    for (var i = 0; i < titles.length; i++) {
-      rowElement.innerHTML += `
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="card my-3 shadow rounded-5 overflow-hidden"
-            onmouseover="this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5)'"
-            onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'"
-            onclick="toggleExpand('expand-${i}')">
-            <img src="${pictures[i]}" class="card-img-top" alt="${titles[i]}">
+  <main class="container my-5">
+    <section id="destinations">
+      <h2 class="text-center section-title" data-aos="fade-up">Top Destinations</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="destination-card">
+            <img src="images/elnido.jpg" class="card-img-top" alt="El Nido">
             <div class="card-body">
-              <h5 class="card-title">${titles[i]}</h5>
-              <p class="card-text">${contents[i]}</p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-              <div id="expand-${i}" class="expandable-content">
-                <p>Discover more about ${titles[i]} and plan your adventure now!</p>
-              </div>
+              <h5 class="card-title">El Nido</h5>
+              <p class="card-text">Explore stunning limestone cliffs, hidden lagoons, and crystal-clear waters. A
+                paradise for island hopping.</p>
             </div>
           </div>
         </div>
-      `;
-    }
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="destination-card">
+            <img src="images/coron.jpg" class="card-img-top" alt="Coron">
+            <div class="card-body">
+              <h5 class="card-title">Coron</h5>
+              <p class="card-text">Famous for its world-class wreck diving sites, pristine lakes like Kayangan, and
+                breathtaking landscapes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="destination-card">
+            <img src="images/puertoprincesa.jpg" class="card-img-top" alt="Puerto Princesa">
+            <div class="card-body">
+              <h5 class="card-title">Puerto Princesa</h5>
+              <p class="card-text">Home to the world-renowned Underground River, this city blends natural wonders and
+                adventure perfectly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="destination-card">
+            <img src="images/tubbataha.jpg" class="card-img-top" alt="Tubbataha Reefs">
+            <div class="card-body">
+              <h5 class="card-title">Tubbataha Reefs</h5>
+              <p class="card-text">A UNESCO World Heritage site and a diver's dream, boasting unparalleled marine
+                biodiversity and vibrant coral reefs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="destination-card">
+            <img src="images/portbarton.jpg" class="card-img-top" alt="Port Barton">
+            <div class="card-body">
+              <h5 class="card-title">Port Barton</h5>
+              <p class="card-text">A tranquil and laid-back village offering a peaceful escape with its untouched
+                beaches and charming simplicity.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="destination-card">
+            <img src="images/balabac.jpg" class="card-img-top" alt="Balabac Islands">
+            <div class="card-body">
+              <h5 class="card-title">Balabac Islands</h5>
+              <p class="card-text">The southernmost tip of Palawan, offering exotic, unspoiled islands with
+                Maldives-like sandbars and rich wildlife.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    function toggleExpand(id) {
-      var content = document.getElementById(id);
-      content.style.display = (content.style.display === "block") ? "none" : "block";
-    }
+    <section id="contact" class="contact-section mt-5" data-aos="fade-up">
+      <h2 class="text-center section-title">Plan Your Trip</h2>
+      <div class="row g-5">
+        <div class="col-lg-7">
+          <h4 class="mb-3">Send an Inquiry</h4>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" required placeholder="Juan Dela Cruz">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" required placeholder="juan.delacruz@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" required
+                placeholder="Tell us about your dream Palawan vacation..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Inquiry</button>
+          </form>
+        </div>
+        <div class="col-lg-5">
+          <h4 class="mb-3">Contact Information</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-envelope"></i>
+              <div><strong>Email</strong>
+                <p>inquire@palawanph.com</p>
+              </div>
+            </li>
+            <li><i class="fas fa-phone"></i>
+              <div><strong>Phone</strong>
+                <p>+63 976 337 2050</p>
+              </div>
+            </li>
+            <li><i class="fas fa-map-marker-alt"></i>
+              <div><strong>Address</strong>
+                <p>Puerto Princesa City, Palawan, Philippines</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    function toggleFooter() {
-      var footer = document.getElementById('footer');
-      var button = document.querySelector('.btn-secondary');
-      if (footer.style.display === "none" || footer.style.display === "") {
-        footer.style.display = "block";
-        button.textContent = "Hide Footer";
-      } else {
-        footer.style.display = "none";
-        button.textContent = "Show Footer";
-      }
-    }
+  <footer class="text-center py-4">
+    <p class="text-white-50">A conceptual page by Kim Andrei Dela Cueva.</p>
+  </footer>
 
-    var mode = "light";
-    function changeMode() {
-      var body = document.getElementById("body");
-      var colorBtn = document.getElementById("colorBtn");
-      mode = (mode === "light") ? "dark" : "light";
-
-      var btnText = (mode == "dark") ? "Light Mode" : "Dark Mode";
-      var btnClass = (mode == "dark") ? "btn-light" : "btn-dark";
-
-      colorBtn.classList.remove("btn-light", "btn-dark");
-      colorBtn.classList.add(btnClass);
-      colorBtn.innerHTML = btnText;
-
-      body.setAttribute("data-bs-theme", mode);
-    }
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 50 });
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = themeToggle.querySelector('i');
+    const THEME_KEY = 'user-theme';
+    const applyTheme = (theme) => {
+      if (theme === 'light') { body.classList.add('light-mode'); themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
+      else { body.classList.remove('light-mode'); themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
+    };
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    applyTheme(savedTheme || 'dark');
+    themeToggle.addEventListener('click', () => {
+      let newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+      applyTheme(newTheme);
+      localStorage.setItem(THEME_KEY, newTheme);
+    });
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-    crossorigin="anonymous"></script>
-
 </body>
 
 </html>

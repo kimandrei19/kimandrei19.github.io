@@ -4,93 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MacBook M4 Pro Overview</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <title>MacBook M4 Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1 class="text-center my-4">
-        MacBook M4 Pro Specifications
-    </h1>
 
-    <div class="container">
-        <div class="bento-grid">
-            <div class="bento-item wide">
-                Apple M4 Pro Chip
-            </div>
-            <div class="bento-item">
-                12-Core CPU
-            </div>
-            <div class="bento-item tall">
-                18-Core GPU
-            </div>
-            <div class="bento-item">
-                16GB Unified Memory
-            </div>
-            <div class="bento-item">
-                1TB SSD Storage
-            </div>
-            <div class="bento-item wide">
-                14.2" Liquid Retina XDR Display
-            </div>
-            <div class="bento-item">
-                120Hz ProMotion
-            </div>
-            <div class="bento-item tall">
-                MacOS 15
-            </div>
-            <div class="bento-item">
-                22-Hour Battery Life
-            </div>
-        </div>
-    </div>
+    <header class="page-header">
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <button id="theme-toggle" class="btn theme-toggle-btn" aria-label="Toggle theme">
+            <i class="fas fa-sun"></i>
+        </button>
+    </header>
 
-    <h1 class="text-center my-5">
-        MacBook M4 Pro Highlights
-    </h1>
+    <main class="container">
+        <section class="hero-section text-center">
+            <h1 data-aos="fade-down">Mind-blowing. Head-turning.</h1>
+            <p class="lead" data-aos="fade-down" data-aos-delay="100">The new MacBook Pro with the M4 chip family.</p>
+            <img src="macbookpro.jpeg" alt="MacBook M4 Pro" class="img-fluid macbook-image" id="macbookImage"
+                data-aos="zoom-in" data-aos-delay="200">
+        </section>
 
-    <div class="container">
-        <div class="bento-grid">
-            <div class="bento-item highlight wide">
-                MacBook M4 Pro
+        <section class="bento-section">
+            <div class="bento-grid">
+                <div class="bento-item item-chip" data-aos="fade-up" data-target="chip">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Apple M4 Pro Chip</h3>
+                    <p>Next-generation performance.</p>
+                </div>
+                <div class="bento-item" data-aos="fade-up" data-aos-delay="100" data-target="chip">
+                    <i class="fas fa-server"></i>
+                    <h3>12-Core CPU</h3>
+                    <p>Handles pro workflows with ease.</p>
+                </div>
+                <div class="bento-item" data-aos="fade-up" data-aos-delay="200" data-target="chip">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>18-Core GPU</h3>
+                    <p>For demanding graphics tasks.</p>
+                </div>
+                <div class="bento-item" data-aos="fade-up" data-aos-delay="300" data-target="chip">
+                    <i class="fas fa-memory"></i>
+                    <h3>16GB Unified Memory</h3>
+                    <p>Fast and efficient multitasking.</p>
+                </div>
+                <div class="bento-item item-display" data-aos="fade-up" data-aos-delay="100" data-target="screen">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Liquid Retina XDR</h3>
+                    <p>The world's best laptop display.</p>
+                </div>
+                <div class="bento-item" data-aos="fade-up" data-aos-delay="200" data-target="battery">
+                    <i class="fas fa-battery-full"></i>
+                    <h3>Up to 22 Hours</h3>
+                    <p>All-day battery life.</p>
+                </div>
+                <div class="bento-item" data-aos="fade-up" data-aos-delay="300" data-target="camera">
+                    <i class="fas fa-camera"></i>
+                    <h3>1080p Camera</h3>
+                    <p>Look sharp on video calls.</p>
+                </div>
+                <div class="bento-item" data-aos="fade-up" data-aos-delay="400" data-target="audio">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>Studio-Quality Audio</h3>
+                    <p>Six-speaker sound system.</p>
+                </div>
             </div>
-            <div class="bento-item highlight">
-                Sleek Space Black Design
-            </div>
-            <div class="bento-item highlight">
-                M4 Neural Engine for AI
-            </div>
-            <div class="bento-item highlight tall">
-                MagSafe Fast Charging
-            </div>
-            <div class="bento-item highlight">
-                Improved Cooling System
-            </div>
-            <div class="bento-item highlight wide">
-                Studio-Quality Mics & Speakers
-            </div>
-            <div class="bento-item highlight">
-                FaceTime 1080p HD Camera
-            </div>
-            <div class="bento-item highlight tall">
-                Thunderbolt 4 Ports
-            </div>
-            <div class="bento-item highlight">
-                Best-in-Class Battery Life
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <button class="back-btn" onclick="history.back()">
-        &lt; Back
-    </button>
+        <section class="cta-section text-center" data-aos="fade-up">
+            <h2>Configure Your MacBook Pro</h2>
+            <p class="lead">Starting at ₱129,990</p>
+            <button class="btn btn-primary btn-lg">Buy Now</button>
+        </section>
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
-        crossorigin="anonymous"></script>
+    <footer class="text-center py-4">
+        <p class="text-muted">© 2024 Apple Inc. All rights reserved. This is a conceptual page by Kim Andrei Dela Cueva.
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true, offset: 50 });
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const themeIcon = themeToggle.querySelector('i');
+            const THEME_KEY = 'user-theme';
+            const applyTheme = (theme) => {
+                if (theme === 'light') {
+                    body.classList.add('light-mode');
+                    themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon');
+                } else {
+                    body.classList.remove('light-mode');
+                    themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun');
+                }
+            };
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            applyTheme(savedTheme || 'dark');
+            themeToggle.addEventListener('click', () => {
+                let newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+                applyTheme(newTheme);
+                localStorage.setItem(THEME_KEY, newTheme);
+            });
+
+            const macbookImage = document.getElementById('macbookImage');
+            const bentoItems = document.querySelectorAll('.bento-item');
+            bentoItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const target = item.dataset.target;
+                    macbookImage.classList.add(`focus-${target}`);
+                });
+                item.addEventListener('mouseleave', () => {
+                    const target = item.dataset.target;
+                    macbookImage.classList.remove(`focus-${target}`);
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
